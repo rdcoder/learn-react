@@ -1,15 +1,14 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
-const div = React.DOM.div
-const MyTitle = require('./MyTitle')
+const { Router, Route, hashHistory } = require('react-router')
+const Landing = require('./Landing')
+const Search = require('./Search')
 
-const MyFirstComp = () => (  
-  <div>
-    <MyTitle title='what ever you want' color='rebeccapurple' />
-    <MyTitle title='title props' color='#f06d06' />
-    <MyTitle title='third title' color='mediumaquamarine' />
-    <MyTitle title='fourth title' color='papayawhip' />
-  </div>
+const App = () => (
+  <Router history={hashHistory}>
+    <Route path='/' component={Landing} />
+    <Route path='/search' component={Search} />
+  </Router>
 )
 
-ReactDOM.render(<MyFirstComp />, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'))
