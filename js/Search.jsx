@@ -20,7 +20,7 @@ class Search extends React.Component {
     return (
       <div className='container'>
         <header className='header'>
-          <h1 className='brand'>svideo: {this.state.searchTerm}</h1>
+          <h1 className='brand'>svideo</h1>
           <input type='text' className='search-input' placeholder='Search'
             value={this.state.searchTerm} onChange={this.handleSearchTermChange} />
         </header>

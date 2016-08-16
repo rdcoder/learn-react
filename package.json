@@ -6,11 +6,11 @@
   "author": "rdcoder <readercoder@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "test": "standard",
+    "lint": "standard",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "test": "mocha --require test/helper/setup.js -R nyan"
   },
-
   "dependencies": {
     "axios": "0.9.1",
     "express": "4.13.4",
