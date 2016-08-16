@@ -12,24 +12,4 @@ const Search = () => (
   </div>
 )
 
-/*
-const Search = () => (
-  <div className='container'>
-    {data.shows.map((show) => (
-      <h3>{show.title}</h3>
-    ))}
-  </div>
-)
-*/
-/*
-const Search = () => (
-  <div>
-    <h1>Search!!</h1>
-    <pre><code>
-      {JSON.stringify(data, null, 4)}
-    </code></pre>
-  </div>
-)
-*/
-
 module.exports = Search
