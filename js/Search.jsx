@@ -7,7 +7,7 @@ class Search extends React.Component {
     super(props)
 
     this.state = {
-      searchTerm: 'this is the default searchTerm'
+      searchTerm: ''
     }
     this.handleSearchTermChange = this.handleSearchTermChange.bind(this)
   }
@@ -25,8 +25,10 @@ class Search extends React.Component {
             value={this.state.searchTerm} onChange={this.handleSearchTermChange} />
         </header>
         <div className='shows'>
-          {data.shows.map((show) => (
-            <ShowCard show={show} key={show.imdbID} />
+          {data.shows
+            .filter((show) => `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0)
+            .map((show) => (
+              <ShowCard show={show} key={show.imdbID} />
           ))}
         </div>
       </div>
