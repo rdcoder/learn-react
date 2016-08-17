@@ -25,7 +25,7 @@ class Details extends React.Component {
 const { object } = React.PropTypes
 
 Details.propTypes = {
-  params: object
+  params: object.isRequired
 }
 
 module.exports = Details
