@@ -1,20 +1,21 @@
 const React = require('react')
 const ShowCard = require('./ShowCard')
-const data = require('../public/data')
+const { object } = React.PropTypes
 
-class Search extends React.Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
+const Search = React.createClass({
+  getInitialState () {
+    return {
       searchTerm: ''
     }
-    this.handleSearchTermChange = this.handleSearchTermChange.bind(this)
-  }
+  },
+
+  propTypes: {
+    route: object
+  },
 
   handleSearchTermChange (event) {
     this.setState({ searchTerm: event.target.value })
-  }
+  },
 
   render () {
     return (
@@ -25,7 +26,7 @@ class Search extends React.Component {
             value={this.state.searchTerm} onChange={this.handleSearchTermChange} />
         </header>
         <div className='shows'>
-          {data.shows
+          {this.props.route.shows
             .filter((show) => `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0)
             .map((show) => (
               <ShowCard show={show} key={show.imdbID} />
@@ -34,6 +35,6 @@ class Search extends React.Component {
       </div>
     )
   }
-}
+})
 
 module.exports = Search

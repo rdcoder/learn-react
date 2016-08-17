@@ -9,7 +9,8 @@
     "lint": "standard",
     "build": "webpack",
     "watch": "webpack --watch",
-    "test": "mocha --require test/helper/setup.js -R nyan"
+    "test": "mocha --require test/helper/setup.js -R nyan",
+    "cover": "nyc --reporter=lcov --reporter=text --reporter=html --require babel-register --extension .jsx npm test"
   },
   "dependencies": {
     "axios": "0.9.1",
