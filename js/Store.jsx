@@ -42,4 +42,4 @@ const mapDispatchToProps = (dispatch) => {
 // 2) when the response is back, dispatch another action to handle the response.
 const connector = reactRedux.connect(mapStateToProps, mapDispatchToProps)
 
-module.exports = { connector, store }
+module.exports = { connector, store, reducer }
