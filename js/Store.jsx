@@ -1,12 +1,14 @@
 const redux = require('redux')
 const reactRedux = require('react-redux')
+const { shows } = require('../public/data')
 
 const SET_SEARCH_TERM = 'setSearchTerm'
 
 const initialState = {
-  searchTerm: ''
+  searchTerm: '',
+  shows: shows
 }
-
+// if the same name
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_SEARCH_TERM:
@@ -25,7 +27,7 @@ const store = redux.createStore(reducer, initialState, redux.compose(
 ))
 
 // state to props
-const mapStateToProps = (state) => ({ searchTerm: state.searchTerm })
+const mapStateToProps = (state) => ({ searchTerm: state.searchTerm, shows: state.shows })
 const mapDispatchToProps = (dispatch) => {
   return {
     setSearchTerm: (term) => {
