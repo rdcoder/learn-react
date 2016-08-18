@@ -21,6 +21,8 @@ class Landing extends React.Component {
     event.preventDefault()
   }
 
+  // replace svideo with {Math.random()}
+  // mismatch bewteen client and server
   render () {
     return (
       <div className='home-info'>
